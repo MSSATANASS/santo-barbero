@@ -3,10 +3,12 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "homepage": "https://mssatanass.github.io/santo-barbero",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist",
     "admin": "vite --open \"/?admin=1\"",
     "publicar": "cd scripts/facebook && node ai-content-generator.js publish",
     "semana": "cd scripts/facebook && node scheduler.js weekly",
