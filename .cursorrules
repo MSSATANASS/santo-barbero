@@ -1,0 +1,83 @@
+# Santo Barbero - Barbería Premium 🪒
+
+## Contexto del Negocio
+Esta es una aplicación PWA para **Santo Barbero**, una barbería premium ubicada en Roma Norte, Ciudad de México.
+
+## Información del Negocio
+- **Nombre:** Santo Barbero
+- **Ubicación:** Roma Norte, CDMX, México
+- **Idioma:** Español (México)
+- **Moneda:** MXN (Pesos Mexicanos)
+- **Horario:** Lunes a Sábado 10:00 - 20:00
+
+## Servicios y Precios
+| Servicio | Precio |
+|----------|--------|
+| Ritual Esencial (corte + barba) | $450 MXN |
+| Experiencia Santo (corte + barba + masaje) | $650 MXN |
+| Tratamiento VIP (todo + tratamientos) | $900 MXN |
+| Corte Infantil | $300 MXN |
+| Tinte de Barba | $200 MXN |
+| Rasurado Clásico | $250 MXN |
+| Cejas | $150 MXN |
+
+## Equipo de Barberos
+- **Javier "El Maestro"** - 15+ años, especialista en cortes clásicos
+- **Marcos "El Artista"** - 10+ años, especialista en diseños y fades
+- **Carlos "El Bárbaro"** - 8+ años, especialista en barbas
+
+## Stack Tecnológico
+- **Frontend:** React 19 + TypeScript + Vite
+- **Estilos:** Tailwind CSS
+- **Animaciones:** Framer Motion
+- **IA:** Google Gemini (@google/genai)
+- **PWA:** Service Worker + Manifest
+
+## Colores de Marca
+- **Dorado principal:** #c5a47e
+- **Fondo oscuro:** #2a211c
+- **Fondo más oscuro:** #1f1a17
+- **Texto claro:** #e5e7eb (gray-200)
+
+## Reglas para IAs
+
+### Al escribir código:
+1. **Idioma:** Siempre en español para textos de usuario
+2. **Precios:** Usar MXN, nunca USD
+3. **Mobile-first:** Diseñar primero para móvil (min 375px)
+4. **Touch targets:** Mínimo 44px para elementos táctiles
+5. **Accesibilidad:** Labels en formularios, contraste adecuado
+6. **Consistencia:** Seguir patrones existentes en components/
+
+### Al modificar archivos:
+1. Ejecutar `npm run build` para verificar que compila
+2. No tocar la carpeta `dist/` (es generada)
+3. Variables de entorno en `.env.local`, nunca hardcodear API keys
+4. Seguir convenciones de AGENTS.md
+
+### Automatizaciones disponibles:
+- `npm run fb:post` - Publicar en Facebook con IA
+- `npm run fb:schedule` - Programar semana de posts
+- `npm run fb:gallery` - Publicar fotos
+- `npm run fb:test` - Probar conexión Facebook
+
+### Sistema de Lealtad:
+- 10 sellos = 1 corte gratis
+- Datos en localStorage (key: santo_barbero_stamps)
+- Datos de cliente: santo_barbero_customer
+
+### Ruleta Diaria:
+- 1 giro por día por dispositivo
+- Premios: 10% descuento, bebida gratis, cera gratis
+- Control en localStorage (key: santo_barbero_last_spin)
+
+## Rutas de la App
+- `/` - Landing principal (cliente)
+- `?admin=1` - Modo administrador (socio)
+
+## Para el Usuario No Técnico
+Cuando el socio o empleado pida ayuda:
+1. Explicar en términos simples, sin jerga técnica
+2. Dar comandos copy-paste listos para usar
+3. Incluir capturas de pantalla cuando sea posible
+4. Ofrecer alternativas si algo falla
