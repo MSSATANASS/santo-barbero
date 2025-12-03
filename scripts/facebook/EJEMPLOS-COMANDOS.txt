@@ -1,0 +1,148 @@
+/**
+ * Ejemplos prácticos de uso de los scripts de Facebook
+ * Copia y pega estos comandos en tu terminal
+ */
+
+// ==========================================
+// 1. PUBLICACIONES SIMPLES
+// ==========================================
+
+// Post de bienvenida
+node facebook-api.js "🪒 ¡Bienvenido a Santo Barbero! Donde la tradición se encuentra con el estilo moderno. 💈✂️ #SantoBarbero #Barbería #CDMX"
+
+// Promoción de medio semana
+node facebook-api.js "🔥 PROMO MEDIO SEMANA 🔥\n\nCorte + Barba = $450 MXN (precio regular $550)\n\nVálido solo Miércoles y Jueves\n📅 Reserva: WhatsApp\n📍 Roma Norte, CDMX\n\n#PromoSantoBarbero #Barbería"
+
+// Horario especial
+node facebook-api.js "📢 Atención: Este sábado estaremos abiertos hasta las 8pm por alta demanda. ¡Aprovecha! 💈"
+
+
+// ==========================================
+// 2. GENERACIÓN CON IA
+// ==========================================
+
+// Post de tips (casual)
+node ai-content-generator.js publish "cómo mantener el corte fresco por más tiempo" casual
+
+// Promoción (profesional)
+node ai-content-generator.js publish "descuento especial para nuevos clientes" profesional
+
+// Inspiración (profesional)
+node ai-content-generator.js publish "tendencias de cortes para este invierno" profesional
+
+// Humor (divertido)
+node ai-content-generator.js publish "cosas que todo barbero ha escuchado" divertido
+
+// Motivación lunes
+node ai-content-generator.js publish "empieza la semana con buen estilo" profesional
+
+
+// ==========================================
+// 3. POSTS PROGRAMADOS
+// ==========================================
+
+// Post para mañana a las 10am
+node scheduler.js add "☕ Buenos días! Comienza tu semana con un corte fresco en Santo Barbero 💈" 2024-12-18 10:00
+
+// Post para el viernes (tarde)
+node scheduler.js add "🎉 Viernes de transformación! Prepárate para el fin de semana con nosotros ✂️ Reserva tu espacio" 2024-12-22 18:00
+
+// Post de cierre dominical
+node scheduler.js add "🌙 Gracias por preferirnos! Nos vemos mañana para empezar la semana con estilo 💈 #SantoBarbero" 2024-12-24 20:00
+
+
+// ==========================================
+// 4. GALERÍA DE FOTOS
+// ==========================================
+
+// Publicar fotos de la web
+node publish-gallery.js web
+
+// Publicar desde carpeta local
+node publish-gallery.js folder "C:\Users\TuUsuario\Desktop\FotosBarbería" "Transformaciones de la semana 💈✨"
+
+
+// ==========================================
+// 5. PLAN SEMANAL COMPLETO
+// ==========================================
+
+// Genera 6-7 posts con IA para toda la semana
+node scheduler.js weekly
+
+// Ver qué se programó
+node scheduler.js list
+
+
+// ==========================================
+// 6. POSTS ALEATORIOS POR CATEGORÍA
+// ==========================================
+
+// Promoción aleatoria
+node ai-content-generator.js random promocion
+
+// Tip aleatorio
+node ai-content-generator.js random tips
+
+// Inspiración aleatoria
+node ai-content-generator.js random inspiracion
+
+// Humor aleatorio
+node ai-content-generator.js random humor
+
+
+// ==========================================
+// 7. IDEAS PARA LA SEMANA
+// ==========================================
+
+// Obtener 7 ideas (una por día)
+node ai-content-generator.js ideas
+
+
+// ==========================================
+// 8. POSTS PARA FECHAS ESPECIALES
+// ==========================================
+
+// San Valentín
+node ai-content-generator.js publish "look perfecto para San Valentín" profesional
+
+// Día del Padre
+node ai-content-generator.js publish "regalo perfecto para papá - certificado de regalo" profesional
+
+// Fin de año
+node ai-content-generator.js publish "empieza el año nuevo con estilo renovado" profesional
+
+
+// ==========================================
+// 9. TESTIMONIOS Y CASOS DE ÉXITO
+// ==========================================
+
+node facebook-api.js "⭐⭐⭐⭐⭐\n\n'Excelente servicio, ambiente profesional y el mejor corte que he tenido'\n\n- Carlos M.\n\n¡Gracias por tu confianza! 💈\n\n#SantoBarbero #ClientesFelices"
+
+
+// ==========================================
+// 10. CONTENIDO EDUCATIVO
+// ==========================================
+
+node ai-content-generator.js publish "diferencia entre fade, taper y undercut" casual
+
+node ai-content-generator.js publish "cómo elegir el corte según tu tipo de rostro" casual
+
+node ai-content-generator.js publish "productos esenciales para el cuidado masculino" casual
+
+
+// ==========================================
+// AUTOMATIZACIÓN TOTAL
+// ==========================================
+
+// Windows PowerShell - Ejecutar cada hora
+$action = New-ScheduledTaskAction -Execute "node.exe" -Argument "C:\Users\sr_hy\OneDrive\Escritorio\santo-barbero\scripts\facebook\scheduler.js process"
+$trigger = New-ScheduledTaskTrigger -Once -At (Get-Date) -RepetitionInterval (New-TimeSpan -Hours 1)
+Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "FacebookAutoPost" -Description "Publica posts programados automáticamente"
+
+
+// ==========================================
+// VERIFICAR CONEXIÓN
+// ==========================================
+
+// Prueba que todo funcione
+node test-connection.js

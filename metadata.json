@@ -1,0 +1,7 @@
+{
+  "name": "Santo Barbero",
+  "description": "A stylish and modern web application for the Santo Barbero barbershop, showcasing services, gallery, and contact information.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

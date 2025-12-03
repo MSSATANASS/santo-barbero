@@ -1,0 +1,29 @@
+{
+  "name": "santo-barbero-facebook-automation",
+  "version": "1.0.0",
+  "description": "Sistema de automatización para publicaciones en Facebook de Santo Barbero",
+  "type": "module",
+  "main": "facebook-api.js",
+  "scripts": {
+    "post": "node facebook-api.js",
+    "gallery": "node publish-gallery.js",
+    "generate": "node ai-content-generator.js",
+    "schedule": "node scheduler.js",
+    "test": "node test-connection.js"
+  },
+  "keywords": [
+    "facebook",
+    "automation",
+    "barbershop",
+    "social-media",
+    "graph-api"
+  ],
+  "author": "Santo Barbero",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "form-data": "^4.0.0",
+    "@google/genai": "^1.29.0",
+    "dotenv": "^16.3.1"
+  }
+}

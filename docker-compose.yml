@@ -1,0 +1,34 @@
+services:
+  santo-barbero:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        GEMINI_API_KEY: ${GEMINI_API_KEY}
+        VITE_GA_ID: ${VITE_GA_ID:-}
+        VITE_PLAUSIBLE_DOMAIN: ${VITE_PLAUSIBLE_DOMAIN:-}
+    environment:
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
+      VITE_GA_ID: ${VITE_GA_ID:-}
+      VITE_PLAUSIBLE_DOMAIN: ${VITE_PLAUSIBLE_DOMAIN:-}
+      TRAEFIK_HOST: ${TRAEFIK_HOST:-santo-barbero.local}
+    restart: unless-stopped
+    labels:
+      - traefik.enable=true
+      - traefik.http.services.santo-barbero.loadbalancer.server.port=80
+      - traefik.http.routers.santo-barbero.rule=Host(`${TRAEFIK_HOST:-santo-barbero.local}`)
+      - traefik.http.routers.santo-barbero.entrypoints=websecure
+      - traefik.http.routers.santo-barbero.tls=true
+      - traefik.http.routers.santo-barbero.tls.certresolver=letsencrypt
+      - traefik.http.routers.santo-barbero-http.rule=Host(`${TRAEFIK_HOST:-santo-barbero.local}`)
+      - traefik.http.routers.santo-barbero-http.entrypoints=web
+      - traefik.http.routers.santo-barbero-http.middlewares=santo-barbero-https-redirect
+      - traefik.http.middlewares.santo-barbero-https-redirect.redirectscheme.scheme=https
+    networks:
+      - default
+      - traefik
+
+networks:
+  traefik:
+    external: true
+    name: dokploy-network

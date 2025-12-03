@@ -1,0 +1,19 @@
+version: "1.0"
+services:
+  santo-barbero:
+    type: docker
+    context: .
+    dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    env:
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
+      VITE_GA_ID: ${VITE_GA_ID:-}
+      VITE_PLAUSIBLE_DOMAIN: ${VITE_PLAUSIBLE_DOMAIN:-}
+    healthcheck:
+      path: /
+      interval: 30s
+      timeout: 5s
+    resources:
+      cpu: "0.5"
+      memory: "512Mi"

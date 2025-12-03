@@ -1,0 +1,15 @@
+# Ignorar archivo de configuración con credenciales
+.env
+
+# Ignorar node_modules
+node_modules/
+
+# Ignorar archivos de calendario
+schedule.json
+
+# Ignorar logs
+*.log
+
+# Ignorar archivos temporales de imágenes
+temp/
+uploads/

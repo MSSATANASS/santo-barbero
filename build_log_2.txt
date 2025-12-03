@@ -1,0 +1,23 @@
+
+> santo-barbero@0.0.0 build
+> vite build
+
+[36mvite v6.4.1 [32mbuilding for production...[36m[39m
+transforming...
+[32mÔ£ô[39m 24 modules transformed.
+Ô£ù Build failed in 761ms
+error during build:
+[vite]: Rollup failed to resolve import "framer-motion" from "C:/Users/sr_hy/OneDrive/Escritorio/santo-barbero/components/LoyaltyCard.tsx".
+This is most likely unintended because it can break your application at runtime.
+If you do want to externalize this module explicitly add it to
+`build.rollupOptions.external`
+    at viteLog (file:///C:/Users/sr_hy/OneDrive/Escritorio/santo-barbero/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46374:15)
+    at file:///C:/Users/sr_hy/OneDrive/Escritorio/santo-barbero/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46432:18
+    at onwarn (file:///C:/Users/sr_hy/OneDrive/Escritorio/santo-barbero/node_modules/@vitejs/plugin-react/dist/index.js:76:7)
+    at file:///C:/Users/sr_hy/OneDrive/Escritorio/santo-barbero/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46430:7
+    at onRollupLog (file:///C:/Users/sr_hy/OneDrive/Escritorio/santo-barbero/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46422:5)
+    at onLog (file:///C:/Users/sr_hy/OneDrive/Escritorio/santo-barbero/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46072:7)
+    at file:///C:/Users/sr_hy/OneDrive/Escritorio/santo-barbero/node_modules/rollup/dist/es/shared/node-entry.js:20947:32
+    at Object.logger [as onLog] (file:///C:/Users/sr_hy/OneDrive/Escritorio/santo-barbero/node_modules/rollup/dist/es/shared/node-entry.js:22834:9)
+    at ModuleLoader.handleInvalidResolvedId (file:///C:/Users/sr_hy/OneDrive/Escritorio/santo-barbero/node_modules/rollup/dist/es/shared/node-entry.js:21578:26)
+    at file:///C:/Users/sr_hy/OneDrive/Escritorio/santo-barbero/node_modules/rollup/dist/es/shared/node-entry.js:21536:26
